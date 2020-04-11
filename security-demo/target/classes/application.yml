@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/securitytest
+    username: root
+    password: 1997126iloveyou?
+  session:
+    store-type: none #在引入spring-session项目后，你只要配置session的存储方式就可以实现，如果不同机器，你也可以使用spring：redis：xxxx去配置
+    
+server:
+  port: 8080
+  session:
+    timeout: 10 #秒是单位，但是springboot里最小单位是分钟，不满一分钟会补足
+security:
+  basic:
+    enabled: true
+  oauth2:
+    client:
+      client-id: lee
+      client-secret: 123456
+      registered-redirect-uri: http://example.com
+#com:
+#  bigbrotherlee:
+#    security:
+#      browser:
+#        login-page: /login.html
+#        sigin-up-url: /register.html
+#com:
+#  bigbrotherlee:
+#    security:
+#      social:
+#        qq:
+#          app-id: 101518357
+#          app-secret: dde86e0881f1d3557e9c4aba028f6ec1
+#          providerId: qq
+#        filterProcessesUrl: /qqLogin
+#        weixin:
+#          app-id: wxd99431bbff8305a0
+#          app-secret: 60f78681d063590a469f1b297feff3c4
